@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world-rest{{pod_num}}
+  labels:
+    app: hello-world-rest
+spec:
+  containers:
+  - name: rest-pod-{{pod_num}}
+    image: rest:latest
+    ports:
+    - containerPort: 10009
+    env:
+    - name: pod_num
+      value: "{{pod_num}}"
+
+

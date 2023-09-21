@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: grpc-{{pod_num}}
+spec:
+  containers:
+  - name: grpc-pod-{{pod_num}}
+    image: grpc:latest
+    ports:
+    - containerPort: 50051
